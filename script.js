@@ -57,15 +57,25 @@ const gameBoard = (() => {
     console.log("Keep Playing");
   };
 
-  // Create Player
+  // Players
 
-  createPlayer = (name, marker) => {
-    return {
-      name: name,
-      mark: marker,
-      getPlayer() {
-        return "I'm " + this.name + " and my mark is " + this.mark;
+  createPlayers = () => {
+    return [
+      {
+        name: "Player",
+        mark: "X",
       },
-    };
+
+      {
+        name: "Computer",
+        mark: "O",
+      },
+    ];
+  };
+
+  getComputerChoice = () => {
+    let computerChoice = Math.floor(Math.random() * 9);
+
+    return computerChoice;
   };
 })();
